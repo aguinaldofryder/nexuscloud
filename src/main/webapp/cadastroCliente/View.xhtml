@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CadastroClienteViewDlg" widgetVar="CadastroClienteViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewCadastroClienteTitle}">
+            <h:form id="CadastroClienteViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{cadastroClienteController.selected != null}">
+                        <h:outputText value="#{bundle.ViewCadastroClienteLabel_tipoPessoa}"/>
+                        <h:outputText value="#{cadastroClienteController.selected.tipoPessoa}" title="#{bundle.ViewCadastroClienteTitle_tipoPessoa}"/>
+                        <h:outputText value="#{bundle.ViewCadastroClienteLabel_dataCadastro}"/>
+                        <h:outputText value="#{cadastroClienteController.selected.dataCadastro}" title="#{bundle.ViewCadastroClienteTitle_dataCadastro}"/>
+                        <h:outputText value="#{bundle.ViewCadastroClienteLabel_cpf}"/>
+                        <h:outputText value="#{cadastroClienteController.selected.cpf}" title="#{bundle.ViewCadastroClienteTitle_cpf}"/>
+                        <h:outputText value="#{bundle.ViewCadastroClienteLabel_nome}"/>
+                        <h:outputText value="#{cadastroClienteController.selected.nome}" title="#{bundle.ViewCadastroClienteTitle_nome}"/>
+                        <h:outputText value="#{bundle.ViewCadastroClienteLabel_id}"/>
+                        <h:outputText value="#{cadastroClienteController.selected.id}" title="#{bundle.ViewCadastroClienteTitle_id}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="CadastroClienteViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

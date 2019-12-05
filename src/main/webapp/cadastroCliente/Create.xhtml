@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CadastroClienteCreateDlg" widgetVar="CadastroClienteCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateCadastroClienteTitle}">
+            <h:form id="CadastroClienteCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{cadastroClienteController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateCadastroClienteLabel_tipoPessoa}" for="tipoPessoa" />
+                        <p:inputText id="tipoPessoa" value="#{cadastroClienteController.selected.tipoPessoa}" title="#{bundle.CreateCadastroClienteTitle_tipoPessoa}" />
+                        <p:outputLabel value="#{bundle.CreateCadastroClienteLabel_dataCadastro}" for="dataCadastro" />
+                        <p:inputText id="dataCadastro" value="#{cadastroClienteController.selected.dataCadastro}" title="#{bundle.CreateCadastroClienteTitle_dataCadastro}" />
+                        <p:outputLabel value="#{bundle.CreateCadastroClienteLabel_cpf}" for="cpf" />
+                        <p:inputText id="cpf" value="#{cadastroClienteController.selected.cpf}" title="#{bundle.CreateCadastroClienteTitle_cpf}" />
+                        <p:outputLabel value="#{bundle.CreateCadastroClienteLabel_nome}" for="nome" />
+                        <p:inputText id="nome" value="#{cadastroClienteController.selected.nome}" title="#{bundle.CreateCadastroClienteTitle_nome}" />
+                        <p:outputLabel value="#{bundle.CreateCadastroClienteLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{cadastroClienteController.selected.id}" title="#{bundle.CreateCadastroClienteTitle_id}" required="true" requiredMessage="#{bundle.CreateCadastroClienteRequiredMessage_id}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{cadastroClienteController.create}" value="#{bundle.Save}" update="display,:CadastroClienteListForm:datalist,:growl" oncomplete="handleSubmit(args,'CadastroClienteCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CadastroClienteCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
