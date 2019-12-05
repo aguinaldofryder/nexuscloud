@@ -90,12 +90,6 @@
 			<version>2.3.2</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>${version.postgresql}</version>
-		</dependency>
-
 
 	</dependencies>
 </project>
