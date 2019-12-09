@@ -3,7 +3,7 @@ thorntail:
     data-sources:
       nexuscloud:
         driver-name: postgresql
-        connection-url: jdbc:postgresql://localhost:5432/cadastro
+        connection-url: jdbc:postgresql://localhost:32768/cadastro
         user-name: postgres
         password: ifpr
     jdbc-drivers:
